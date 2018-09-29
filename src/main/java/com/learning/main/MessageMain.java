@@ -10,6 +10,8 @@ public class MessageMain {
 public static void main(String[] args) {
 	AnnotationConfigApplicationContext context =new AnnotationConfigApplicationContext(MessageConfiguration.class);
 	MessageComponent app=context.getBean(MessageComponent.class);
-	app.processMessage("nidhishkrishnan2009@gmail.com", "Hi Nidish");
+	//app.processMessage("nidhishkrishnan2009@gmail.com", "Hi Nidish");
+	app.getEmail();
+	app.getSMS();
 }
 }

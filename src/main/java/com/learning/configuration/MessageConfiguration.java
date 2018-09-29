@@ -11,12 +11,27 @@ import com.service.impl.SMSService;
 @Configuration
 @ComponentScan(value="com.learning.component")
 public class MessageConfiguration {
-@Bean
-public MessageService setMessageService()
-{
+//@Bean
+//public MessageService setMessageService()
+//{
+//	
+//	//return new EmailService();
+//	return new SMSService("Airtel");	
+//}
+
 	
-	//return new EmailService();
-	return new SMSService();	
-}
+	@Bean
+	public EmailService emailService()
+	{
+		return new EmailService("nidhish@gmail.com");
+	}
+	
+	@Bean
+	public SMSService smsService()
+	{
+		SMSService s=new SMSService();
+		s.setSmsProvider("Idea");
+		return s;
+	}
 
 }
